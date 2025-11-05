@@ -1,0 +1,34 @@
+# ==========================
+# Python / Jupyter .gitignore
+# ==========================
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+ENV/
+*.env
+
+# Arquivos temporários e caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.so
+
+# Dados e resultados
+data/raw/
+data/tmp/
+outputs/
+*.csv
+*.zip
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb_save
+.notebooks/
+.DS_Store
+
+# Configuração local VSCode / PyCharm
+.vsc
