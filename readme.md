@@ -8,22 +8,96 @@ O objetivo é aplicar técnicas de **clusterização (K-Means e Hierárquica)** 
 
 ## 🧠 Objetivos do Projeto
 
-1. **Explorar os dados** socioeconômicos e de saúde disponíveis no Kaggle  
-2. **Pré-processar** as variáveis para garantir comparabilidade entre diferentes escalas  
+1. **Explorar os dados** socioeconômicos e de saúde  
+2. **Pré-processar os dados** (limpeza, escala, inspeção)  
 3. Aplicar **K-Means** e **Clusterização Hierárquica**  
-4. **Comparar os resultados** entre os métodos, interpretando as diferenças  
-5. Discutir a **sensibilidade a outliers** e a robustez de outros algoritmos, como o DBSCAN  
+4. **Comparar resultados** entre os métodos  
+5. Avaliar **sensibilidade a outliers** e robustez do **DBSCAN**
 
 ---
 
-## 📦 Dataset Utilizado
+## 📦 Dataset
 
-**Fonte:** [Kaggle - Unsupervised Learning on Country Data](https://www.kaggle.com/datasets/rohan0301/unsupervised-learning-on-country-data)
-
-**Descrição:**  
-O dataset contém indicadores de cerca de 167 países, incluindo PIB per capita, expectativa de vida, mortalidade infantil, gastos com saúde, exportações e importações, entre outros.
+**Fonte:**  
+[Kaggle — Unsupervised Learning on Country Data](https://www.kaggle.com/datasets/rohan0301/unsupervised-learning-on-country-data)
 
 ---
 
-## ⚙️ Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
+```bash
+.
+├── data/                    # Dados utilizados (não versionados)
+│   └── Country-data.csv
+├── notebooks/
+│   └── clusterizacao_paises.ipynb
+├── outputs/
+│   ├── histogramas/
+│   ├── boxplots/
+│   └── pca_clusters.png
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
+
+---
+
+## 🧩 Etapas Desenvolvidas
+
+### ✅ Pré-processamento
+- Tratamento de dados ausentes  
+- Padronização com **StandardScaler**  
+- Geração de histogramas e boxplots  
+- Análise de correlação entre variáveis  
+
+### ✅ Clusterização
+- Aplicação do **K-Means** com K=3  
+- **Clusterização Hierárquica** com método *Ward*  
+- Identificação dos **medóides** (países representativos)  
+
+### ✅ Comparação
+- Tabela de contingência entre métodos  
+- Cálculo do **Adjusted Rand Score**  
+- Visualização via **PCA**
+
+---
+
+## 🧪 Tecnologias Utilizadas
+
+- Python 3.10+  
+- Pandas  
+- NumPy  
+- Scikit-Learn  
+- SciPy  
+- Matplotlib / Seaborn  
+
+---
+
+## ▶️ Como Executar
+
+```bash
+# Criar ambiente virtual
+python -m venv .venv
+
+# Ativar ambiente
+source .venv/bin/activate        # Mac/Linux
+.venv\Scripts\activate           # Windows
+
+# Instalar dependências
+pip install -r requirements.txt
+
+# Executar notebook
+jupyter notebook notebooks/clusterizacao_paises.ipynb
+```
+
+---
+
+## ✨ Resultados
+
+- Identificação de **3 perfis principais de desenvolvimento**:
+  - Países desenvolvidos  
+  - Países em desenvolvimento  
+  - Países com baixo IDH  
+- Países representativos (medóides) de cada cluster  
+- Gráfico PCA comparando **K-Means vs Hierárquico**  
+- Dendrograma e análise comparativa de métodos  
